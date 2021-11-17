@@ -10,10 +10,13 @@ class ChartBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: <Widget>[
-      // Previene que el texto crezca. Si es una cifra muy grande, encoje el
-      // texto para que se ajuste a la caja.
-      FittedBox(
-        child: Text('\$${spendingAmount.toStringAsFixed(0)}'),
+      Container(
+        height: 20,
+        // FittedBox previene que el texto crezca. Si es una cifra muy grande, encoje el
+        // texto para que se ajuste a la caja.
+        child: FittedBox(
+          child: Text('\$${spendingAmount.toStringAsFixed(0)}'),
+        ),
       ),
       SizedBox(
         height: 4,
@@ -22,6 +25,7 @@ class ChartBar extends StatelessWidget {
         height: 60,
         width: 10,
         child: Stack(
+          alignment: Alignment.bottomCenter,
           children: <Widget>[
             Container(
               decoration: BoxDecoration(
